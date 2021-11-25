@@ -1,0 +1,22 @@
+<div class="fluid-container" style=" display: flex; flex-direction: column;">
+  <div class="container">
+    <div class="row mt-5">
+      <div class="col-12" *ngIf="!companies?.length > 0">
+        <div class="alert alert-light text-center" role="alert">
+          Para consultar os registros, clique no botão!
+        </div>
+      </div>
+        <div class="col-4" *ngFor="let company of companies">
+            <div class="card bg-dark text-white bd-red border-light mb-3">
+                <div class="card-header title">{{company.nome}}</div>
+                <div class="card-body">
+                  <h5 class="card-title">{{company.segmento}}</h5>
+                  <p class="card-text">Desvio padrão: {{company.desvioPadrao}}.</p>
+                </div>
+              </div>
+        </div>
+  
+    </div>
+  </div>
+    <button (click)="carregarCompanies()" type="button" class="btn btn-primary mt-3" style="max-width: 200px;    align-self: center;">(Consultar) - EMPRESAS</button>
+</div>
